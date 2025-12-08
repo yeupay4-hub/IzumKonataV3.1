@@ -1,11 +1,13 @@
+## Hi everybody!
+-> This project will no longer be sold, so I will share it for free with you.
+
 ## 🌀 IzumKonata Obfuscator
--> Link: https://izumkotnata.netlify.app/
 
 -> High-Speed Obfuscation Engine – Advanced Anti-Tamper – Multi-Layer Compression
 
 <img width="1917" height="1077" alt="Ảnh chụp màn hình 2025-11-25 222944" src="https://github.com/user-attachments/assets/ddbe35bd-e0b6-46f0-a007-e42c49d639ea" />
 
--> A powerful, high‑speed Python obfuscator with multi‑layer protection, featuring anti-debug, anti-tamper, anti-hook requests, and a fully customized encryption system.
+-> A powerful, high‑speed Python obfuscator with multi‑layer protection, featuring anti-debug, anti-crack like http toolkit software,... anti-tamper, anti-hook requests, and a fully customized encryption system.
 
 ## 🌟 Outstanding features
 
