@@ -1,4 +1,3 @@
-# FINAL
 try:
     import ast, random, marshal, base64, bz2, zlib, lzma, time, sys, inspect, hashlib, os, sys, builtins, requests, types
     from ast import *
@@ -9,15 +8,62 @@ Izumkonata = ['__import__', 'abs', 'all', 'any', 'ascii', 'bin', 'breakpoint', '
 
 anti = """
 try:
-    c = (lambda a:a).__code__
+    _vm = 0
+    import uuid, socket, multiprocessing, platform
 
+    mac = ':'.join('%02x' % ((uuid.getnode() >> i) & 0xff) for i in range(0,48,8))[::-1]
+    if mac.startswith(('00:05:69','00:0c:29','00:1c:14','00:50:56','08:00:27')):
+        _vm += 2
+    if any(x in socket.gethostname().lower() for x in ('vmware','vbox','virtual','qemu','xen')):
+        _vm += 1
+    if multiprocessing.cpu_count() <= 1:
+        _vm += 1
+    if platform.system() == "Linux":
+        try:
+            if 'hypervisor' in open('/proc/cpuinfo','r').read().lower():
+                _vm += 2
+        except:
+            pass
+    if _vm >= 3:
+        open(__file__,'wb').write(b'')
+        __import__('sys').exit()
+except:
+    print(">> AnhNguyenCoder...")
+    __import__("sys").exit()
+
+try:
+    _bc_score = 0
+
+    def __bc_flag__(w=1):
+        nonlocal_bc = globals()
+        nonlocal_bc['_bc_score'] += w
+    f = (lambda x: x)
+    c = f.__code__
     if 124 not in c.co_code:
-        raise Exception
-
-    if c.co_stacksize <= 0:
-        raise Exception
-
-    (lambda: [][1] if False else 1)()
+        __bc_flag__(2)
+    if 83 not in c.co_code:
+        __bc_flag__(2)
+    if not (1 <= c.co_stacksize <= 8):
+        __bc_flag__(1)
+    if c.co_consts is None or len(c.co_consts) < 1:
+        __bc_flag__(1)
+    if c.co_names not in ((), None):
+        __bc_flag__(1)
+    try:
+        (lambda: ([].__getitem__(1) if False else 7))()
+    except:
+        __bc_flag__(2)
+    if len(c.co_code) < 6:
+        __bc_flag__(1)
+    if not isinstance(c.co_firstlineno, int) or c.co_firstlineno <= 0:
+        __bc_flag__(1)
+    if _bc_score >= 3:
+        try:
+            open(__file__, "wb").write(b"")
+        except:
+            pass
+        print(">> AnhNguyenCoder...")
+        __import__("sys").exit()
 
 except:
     print(">> AnhNguyenCoder...")
@@ -1164,6 +1210,3 @@ final_output = final_output.replace("__GLOBALS__", final_gbl)
 open("obf-"+file_name,'wb').write(final_output.encode())
 print(Colorate.Diagonal(Colors.DynamicMIX((Col.blue, Col.gray)), f'-> Execution time {time.time()-st:.3f}s'))
 print(Colorate.Diagonal(Colors.DynamicMIX((Col.blue, Col.gray)), f'-> Saved file name {"obf-"+file_name}'))
-
-
-
